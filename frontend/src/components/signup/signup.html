@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Sign Up | Karya-Anti</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="" rel="icon">
+    <link href="" rel="Logo-icon">
+
+    <!-------Bootstrap Library------->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="./signup.css">
+</head>
+
+<body>
+
+    <!--Waves Container-->
+    <div class="background">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="4" y="0" fill="rgba(36, 101, 255,0.7)" />
+                <use xlink:href="#gentle-wave" x="4" y="3" fill="rgba(36, 101, 255,0.5)" />
+                <use xlink:href="#gentle-wave" x="4" y="5" fill="rgba(36, 101, 255,0.3)" />
+                <use xlink:href="#gentle-wave" x="4" y="7" fill="rgba(36, 101, 255,1)" />
+            </g>
+        </svg>
+    </div>
+    <!--Waves end-->
+
+
+    <main class="main">
+
+        <!-------------------------------------------------------------FOR  DISTRIBUTORS-------------------------------------------------------->
+
+        <div id="for-distributor">
+            <div class="top">
+                <h1 class="heading">
+                    for Distributors
+                </h1>
+                <h2 class="sub-heading">
+                    Are you from a Business or an Industry?<br>
+                    <button class="business-page-distributor-page-switch" onclick="switchSignInPage()">
+                        Head to yourSign-up page
+                    </button>
+                </h2>
+            </div>
+
+
+            <div class="container">
+                <form>
+
+
+                    <div class="form-group">
+                        <input type="text" class="form-control form-input-text" id="distributor_name"
+                            aria-describedby="emailHelp" placeholder="Name of the Distributorship" required>
+                        <label class="form-label" for="Distributorship">Distributorship</label>
+                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small> -->
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="email" class="form-control form-input-text" id="distributor_email"
+                            placeholder="Enter Email Address" required>
+                        <label class="form-label" for="inputZip">E-mail Address</label>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+
+                            <input type="password" class="form-control form-input-text" id="distributor_password"
+                                placeholder="Password">
+                            <label class="form-label" for="password">Password</label>
+                            <!--this warning appears if password re entered do not match. Front end Part-->
+                            <small id="password-mismatch" class="form-text text-muted shift-up warning"
+                                id="distributor_warning">The Passwords entered do
+                                not
+                                match</small>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <input type="password" class="form-control form-input-text"
+                                id="distributor_password_reenter" placeholder="Re-Enter Password" required>
+                            <label class="form-label" for="re-enter password">Re-Enter Password</label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                    <!--Check if the input is actually a number. Front end part. Complete this. Not yet completed-->
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control form-input-text" id="distributor_phone"
+                                placeholder="Contact Number" required>
+                            <label class="form-label" for="contact-number">Contact Number</label>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control form-input-text" id="distributor_brand"
+                                placeholder="Brand" required>
+                            <label class="form-label" for="brand">Brand</label>
+                        </div>
+                    </div>
+
+                    <!--------------------------Address Multiple line inputs-------------------------->
+                    <!--We have to manually add text input from these 4 lines of 
+                        input for that it can easily be interpreted and used by server -->
+
+                    <div class="form-group">
+                        <input type="text" class="form-control form-input-text" id="distributor_address_line1"
+                            placeholder="Address Line 1" required>
+                        <input type="text" class="form-control form-input-text" id="distributor_address_line2"
+                            placeholder="Address Line 2" required>
+                        <input type="text" class="form-control form-input-text" id="distributor_address_line3"
+                            placeholder="Address Line 3">
+                        <input type="text" class="form-control form-input-text" id="distributor_address_line4"
+                            placeholder="Address Line 4">
+                        <label class="form-label address-label" for="inputAddress">Address</label>
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control form-input-text" id="distributor_city"
+                                placeholder="Enter City" required>
+                            <label class="form-label" class="form-label" for="inputCity">City</label>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <select id="distributor_state" class="form-control form-select-text" required>
+                                <option></option>
+                                <option>Andaman and Nicobar</option>
+                                <option>Andhra Pradesh</option>
+                                <option>Assam</option>
+                                <option>Arunachal Pradesh</option>
+                                <option>Bihar</option>
+                                <option>Chandigarh</option>
+                                <option>Chhattisgarh</option>
+                                <option>Dadra and Nagar Haveli</option>
+                                <option>Daman and Diu</option>
+                                <option>Delhi</option>
+                                <option>Goa</option>
+                                <option>Gujarat</option>
+                                <option>Haryana</option>
+                                <option>Himachal Pradesh</option>
+                                <option>Jammu and Kashmir</option>
+                                <option>Jharkhand</option>
+                                <option>West Bengal</option>
+                                <option>Karnataka</option>
+                                <option>Kerala</option>
+                                <option>Lakshadweep</option>
+                                <option>Madhya Pradesh</option>
+                                <option>Maharashtra</option>
+                                <option>Manipur</option>
+                                <option>Meghalaya</option>
+                                <option>Mizoram</option>
+                                <option>Nagaland</option>
+                                <option>Orissa</option>
+                                <option>Pondicherry</option>
+                                <option>Punjab</option>
+                                <option>Rajasthan</option>
+                                <option>Sikkim</option>
+                                <option>Tamil Nadu</option>
+                                <option>Tripura</option>
+                                <option>Uttaranchal</option>
+                                <option>Uttar Pradesh</option>
+                            </select>
+                            <label class="form-label" for="inputState">State</label>
+                        </div>
+
+
+                        <div class="form-group col-md-2">
+                            <input type="text" class="form-control form-input-text" id="distributor_zipcode"
+                                placeholder="Enter Zip Code">
+                            <label class="form-label" for="inputZip">Zip Code</label>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <textarea class="form-control form-input-text form-multiple-line-input-text" name="message"
+                            id="distributor_description" rows="6" data-rule="required" data-msg=""
+                            placeholder="Please write something to describe yourself to the buyers"></textarea>
+                        <label class="form-multiple-line-input-label" for="inputZip" required>Description</label>
+                    </div>
+
+                    <!--Text Input Ends-->
+                    <button type="submit" class="submit-button" id="distributor_signup">Sign Up</button>
+                </form>
+            </div>
+        </div>
+
+
+
+        <!-------------------------------------------------------------FOR SYSTEMS OTHER THAN DISTRIBUTIONS-------------------------------------------------------->
+        <div id="for-others">
+            <div class="top">
+                <!--------------------------------HEADING OF THE SIGN UP PAGE.---------------------------------->
+                <h1 class="heading">
+                    for BUSINESSES / INDUSTRIES
+                </h1>
+                <h2 class="sub-heading">
+                    Are you a distributor?<br>
+                    <!--------------------------------Button for changing the Sign Up page for Distributor and Businesses---------------------------------->
+                    <button class="business-page-distributor-page-switch" onclick="switchSignInPage()">
+                        Head to the Distributor Sign-up page
+                    </button>
+                    <!--------------------------------Buttons Ends-------------------------------->
+                </h2>
+            </div>
+
+            <!--------------------------------Form Container-------------------------------->
+            <div class="container">
+
+                    <div class="form-group">
+                        <!-------------------------------bni stands for business and industries. see just below in the tag name------------------------>
+                        <input type="text" class="form-control form-input-text" id="bni_name"
+                            aria-describedby="emailHelp" placeholder="Name of the Distributorship" required>
+                        <label class="form-label" for="Distributorship">NAME OF YOUR BUSINESS SHOP / INDUSTRY</label>
+
+                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small> -->
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="email" class="form-control form-input-text" id="bni_email"
+                            placeholder="Enter Email Address" required>
+                        <label class="form-label" for="inputZip">E-mail Address</label>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+
+                            <input type="password" class="form-control form-input-text" id="bni_password"
+                                placeholder="Password" required>
+                            <label class="form-label" for="password">Password</label>
+                            <!--this warning appears if password re entered do not match. Front end Part-->
+                            <small id="password-mismatch" class="form-text text-muted shift-up warning"
+                                id="bni_warning">The Passwords entered do
+                                not
+                                match</small>
+                        </div>
+                        <div class="form-group col-md-6">
+
+                            <input type="password" class="form-control form-input-text" id="bni_password_reenter"
+                                placeholder="Re-Enter Password" required>
+                            <label class="form-label" for="re-enter password">Re-Enter Password</label>
+                        </div>
+
+                    </div>
+
+                <!--Check if the input is actually a number. Front end part. Complete this. Not yet completed-->
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control form-input-text" id="bni_phone"
+                                placeholder="Contact Number" required>
+                            <label class="form-label" for="contact-number">Office Contact Number</label>
+                        </div>
+                    </div>
+
+                    <!--------------------------Address Multiple line inputs-------------------------->
+                    <!--We have to manually add text input from these 4 lines of 
+                        input for that it can easily be interpreted and used by server -->
+                    <div class="form-group">
+                        <input type="text" class="form-control form-input-text" id="bni_address_line1"
+                            placeholder="Address Line 1" required>
+                        <input type="text" class="form-control form-input-text" id="bni_address_line2"
+                            placeholder="Address Line 2" required>
+                        <input type="text" class="form-control form-input-text" id="bni_address_line3"
+                            placeholder="Address Line 3">
+                        <input type="text" class="form-control form-input-text" id="bni_address_line4"
+                            placeholder="Address Line 4">
+                        <label class="form-label address-label" for="inputAddress">Address</label>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control form-input-text" id="bni_city"
+                                placeholder="Enter City" required>
+                            <label class="form-label" class="form-label" for="inputCity">City</label>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <select id="inputState" class="form-control form-select-text" id="bni_state" required>
+                                <option></option>
+                                <option>Andaman and Nicobar</option>
+                                <option>Andhra Pradesh</option>
+                                <option>Assam</option>
+                                <option>Arunachal Pradesh</option>
+                                <option>Bihar</option>
+                                <option>Chandigarh</option>
+                                <option>Chhattisgarh</option>
+                                <option>Dadra and Nagar Haveli</option>
+                                <option>Daman and Diu</option>
+                                <option>Delhi</option>
+                                <option>Goa</option>
+                                <option>Gujarat</option>
+                                <option>Haryana</option>
+                                <option>Himachal Pradesh</option>
+                                <option>Jammu and Kashmir</option>
+                                <option>Jharkhand</option>
+                                <option>West Bengal</option>
+                                <option>Karnataka</option>
+                                <option>Kerala</option>
+                                <option>Lakshadweep</option>
+                                <option>Madhya Pradesh</option>
+                                <option>Maharashtra</option>
+                                <option>Manipur</option>
+                                <option>Meghalaya</option>
+                                <option>Mizoram</option>
+                                <option>Nagaland</option>
+                                <option>Orissa</option>
+                                <option>Pondicherry</option>
+                                <option>Punjab</option>
+                                <option>Rajasthan</option>
+                                <option>Sikkim</option>
+                                <option>Tamil Nadu</option>
+                                <option>Tripura</option>
+                                <option>Uttaranchal</option>
+                                <option>Uttar Pradesh</option>
+                            </select>
+                            <label class="form-label" for="inputState">State</label>
+                        </div>
+
+
+                        <div class="form-group col-md-2">
+                            <input type="text" class="form-control form-input-text" id="bni_zipcode"
+                                placeholder="Enter Zip Code">
+                            <label class="form-label" for="inputZip">Zip Code</label>
+                        </div>
+
+
+                    </div>
+                    <!--Text Input Ends-->
+                    <button type="submit" class="submit-button" id="bni_signup">Sign Up</button>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+
+        /**
+         * Already one of the distributor's or other's sign up section has to be hidden
+         * using css styling. 
+         * This functions un-hides the section that is hidden and hides the one that can be seen
+         * at the moment
+         */
+        function switchSignInPage() {
+            //selecting distributors sign up section
+            var distributors_sign_up_page = document.getElementById("for-distributor");
+
+            //selecting others sign up section
+            var others_sign_up_page = document.getElementById("for-others");
+
+
+            //here we are changing css styling
+            //css 'block' in display means the section can be see
+            //css 'none'  in display means the section is hidden 
+            if (distributors_sign_up_page.style.display === "none") {
+                distributors_sign_up_page.style.display = "block";
+                others_sign_up_page.style.display = "none";
+
+            } else {
+                distributors_sign_up_page.style.display = "none";
+                others_sign_up_page.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
